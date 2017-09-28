@@ -19,6 +19,16 @@
   <title></title>
 </head>
 <body>
+  <nav>
+    <% if session[:user_id].nil? %>
+      <a href="/sessions/new">Login</a>
+    <% else %>
+      <form id="logout-button" action="sessions/<%= session[:user_id] %>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="logout">
+      </form>
+    <% end %>
+  </nav>
   <%= yield %>
 </body>
 </html>
