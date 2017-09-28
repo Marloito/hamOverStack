@@ -1,0 +1,11 @@
+<h1>Login</h1>
+
+<% unless @error_messages.nil? %>
+  <h3> <%= @error_messages %> </h3>
+<% end %>
+
+<form class="login_form" action="/sessions" method="post">
+  <input type="text" name="username" placeholder="username">
+  <input type="password" name="password" placeholder="password">
+  <input type="submit" name="submit">
+</form>
