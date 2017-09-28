@@ -8,7 +8,7 @@ post '/sessions' do
     session[:user_id] = user.id
     redirect '/'
   else
-    @error_messages = 'Could not login, please try again!'
+    @error_messages = ['Could not login, please try again!']
     erb :'sessions/new'
   end
 end

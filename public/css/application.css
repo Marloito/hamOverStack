@@ -125,3 +125,15 @@ form#posts input[type='submit'] {
   vertical-align: sub;
   padding: 1px 0px 0px 0px;
 }
+
+.error_messages {
+  color: red;
+}
+
+h1.logo {
+  color: silver;
+}
+
+h1.logo span{
+  color: orange;
+}
