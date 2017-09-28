@@ -22,6 +22,7 @@
   <nav>
     <% if session[:user_id].nil? %>
       <a href="/sessions/new">Login</a>
+      <a href="/users/new">Sign up</a>
     <% else %>
       <form id="logout-button" action="sessions/<%= session[:user_id] %>" method="post">
         <input type="hidden" name="_method" value="delete">
