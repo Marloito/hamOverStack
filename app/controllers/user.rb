@@ -10,7 +10,7 @@ post '/users' do
   else
     if request.xhr?
     else
-      @errors = user.errors.full_messages
+      @error_messages = user.errors.full_messages
       erb :'users/new'
     end
   end
