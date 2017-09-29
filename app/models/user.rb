@@ -15,6 +15,7 @@ class User < ApplicationRecord
 
   def self.authenticate(username, password)
     user = User.find_by(username: username)
+    return nil if user == nil
     return user if user.password == password
     nil
   end
