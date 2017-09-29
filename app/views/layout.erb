@@ -19,7 +19,10 @@
   <title></title>
 </head>
 <body>
+  <h1 class='logo'><span>Ham</span>OverStack</h1>
+
   <nav>
+    <a href="/">Home</a>
     <% if session[:user_id].nil? %>
       <a href="/sessions/new">Login</a>
       <a href="/users/new">Sign up</a>
@@ -30,6 +33,23 @@
       </form>
     <% end %>
   </nav>
+
+  <% unless session[:user_id].nil? %>
+    <div class="welcome_message">
+      <h4><% "Welcome #{User.find(session[:user_id]).username}!" %></h4>
+    </div>
+  <% end %>
+
+  <div class="error_messages">
+    <% unless @error_messages.nil? %>
+      <% @error_messages.each do |error|%>
+        <ul>
+          <li><%= error %></li>
+        </ul>
+      <% end %>
+    <% end %>
+  </div>
+
   <%= yield %>
 </body>
 </html>
