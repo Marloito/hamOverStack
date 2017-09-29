@@ -54,6 +54,10 @@ h1.logo {
   color: silver;
 }
 
+a.logo-link {
+  text-decoration: none;
+}
+
 h1.logo span{
   color: orange;
 }
@@ -70,4 +74,29 @@ h1.logo span{
 
 .questions-home a {
   text-decoration: none;
+}
+
+.questions-show {
+  margin-top: 35px;
+  padding: 10px;
+  border: 3px solid #a6a6a6;
+  background-color: #f2f2f2;
+  padding-bottom: 10px;
+  border-bottom: 3px double gray;
+}
+
+.questions-show h6 {
+  float: right;
+  max-width: 60px;
+  max-height: 10px;
+  padding: 15px;
+  border: 3px solid #a6a6a6;
+  background-color: #f2f2f2;
+  margin-left: 30px;
+  color: orange;
+}
+
+.questions-show p {
+  padding-top: 10px;
+  border-top: 3px double gray;
 }
