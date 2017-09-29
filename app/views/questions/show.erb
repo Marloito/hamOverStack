@@ -12,10 +12,13 @@
     </div>
   <% end %>
 </div>
-
-<div class="">
-  <form class="" action="/questions/<%=@question.id%>/answers" method="post">
-    <textarea name="description" rows="8" cols="60" placeholder="Your Answer"></textarea>
-    <input type="submit" name="submit" value="Submit">
-  </form>
-</div>
+<% if session[:user_id] %>
+  <div class="">
+    <form class="" action="/questions/<%=@question.id%>/answers" method="post">
+      <textarea name="description" rows="8" cols="60" placeholder="Your Answer"></textarea>
+      <input type="submit" name="submit" value="Submit">
+    </form>
+  </div>
+<% else %>
+  <h3>You must be logged in to answer this question.</h3>
+<% end %>
