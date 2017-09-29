@@ -4,11 +4,22 @@
   <a><h6><%= @question.user.username %></h6></a>
 </div>
 
+<% if @best_answer %>
+<div class="best-answer">
+  <h4>Best Answer:</h4>
+  <p><%= @best_answer.description %></p>
+  <h6><%= @best_answer.user.username %></h6>
+</div>
+<% end %>
+
 <div>
   <% @question.answers.each do |answer| %>
     <div class="answers-show">
       <p><%= answer.description %></p>
       <h6><%= answer.user.username %></h6>
+      <% if @question.user_id == session[:user_id] %>
+        <h6><a href="/answers/<%= answer.id %>">Toggle Best Answer</a></h6>
+      <% end %>
     </div>
   <% end %>
 </div>

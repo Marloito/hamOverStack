@@ -8,6 +8,7 @@ end
 
 get '/questions/:id' do
   @question = Question.find(params[:id])
+  @best_answer = @question.answers.find_by(best_answer: true)
   erb :'/questions/show'
 end
 
