@@ -6,7 +6,7 @@ post '/users' do
   user = User.new(params)
   if user.validate
     user.save
-    redirect '/'
+    redirect '/sessions/new'
   else
     if request.xhr?
     else

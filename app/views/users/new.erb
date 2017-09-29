@@ -1,9 +1,4 @@
 <h1>New User Sign Up</h1>
-<% unless @errors == nil %>
-  <% @errors.each do |error| %>
-    <p class="error-message"> <%= error %> </p>
-  <% end %>
-<% end %>
 <form id="new-user-form" action="/users" method="post">
   <div>
   <label>Full Name: </label>

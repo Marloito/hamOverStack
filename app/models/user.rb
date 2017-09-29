@@ -12,10 +12,10 @@ class User < ApplicationRecord
     @password = Password.create(new_password)
     self.password_hash = @password
   end
-  
+
   def self.authenticate(username, password)
     user = User.find_by(username: username)
-    return user if user.password_hash == password
+    return user if user.password == password
     nil
   end
 
