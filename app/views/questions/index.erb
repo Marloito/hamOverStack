@@ -3,7 +3,7 @@
 <% @questions.each do |question| %>
   <div class="questions-home">
     <a href="/questions/<%= question.id %>"><h4><%= question.title %></h4></a>
-    <a href="/users/<%= question.user_id %>"><h6><%= question.user.username %></h6></a>
+    <a><h6><%= question.user.username %></h6></a>
     <hr>
   </div>
 <% end %>
