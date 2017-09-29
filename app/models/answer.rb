@@ -3,5 +3,5 @@ class Answer < ApplicationRecord
   belongs_to :user
   belongs_to :question
 
-  validates :question, uniqueness: {scope: :user}
+  validates :question, uniqueness: {scope: :user, message: "- You've already answered this question"}
 end
