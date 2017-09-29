@@ -33,9 +33,13 @@
     <% end %>
   </nav>
 
+
   <% unless session[:user_id].nil? %>
     <div class="welcome_message">
-      <h4><% "Welcome #{User.find(session[:user_id]).username}!" %></h4>
+      <h4><%= "Welcome #{User.find(session[:user_id]).username}!" %></h4>
+    </div>
+    <div class="new-question-button">
+      <a href="/questions/new">Ask a question</a>
     </div>
   <% end %>
 

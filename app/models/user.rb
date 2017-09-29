@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   include BCrypt
 
+  has_many :questions
+
   validates :username, :email, presence: true, uniqueness: true
   validates :password_hash, presence: true
 
