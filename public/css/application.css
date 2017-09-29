@@ -54,6 +54,10 @@ h1.logo {
   color: silver;
 }
 
+a.logo-link {
+  text-decoration: none;
+}
+
 h1.logo span{
   color: orange;
 }

@@ -19,10 +19,9 @@
   <title></title>
 </head>
 <body>
-  <h1 class='logo'><span>Ham</span>OverStack</h1>
+  <a href="/" class="logo-link"> <h1 class='logo'><span>Ham</span>OverStack</h1></a>
 
   <nav>
-    <a href="/">Home</a>
     <% if session[:user_id].nil? %>
       <a href="/sessions/new">Login</a>
       <a href="/users/new">Sign up</a>
