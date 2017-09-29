@@ -3,3 +3,12 @@
   <p><%= @question.description %></p>
   <a><h6><%= @question.user.username %></h6></a>
 </div>
+
+<div>
+  <% @question.answers.each do |answer| %>
+    <div class="answers-show">
+      <p><%= answer.description %></p>
+      <h6><%= answer.user.username %></h6>
+    </div>
+  <% end %>
+</div>
