@@ -12,3 +12,15 @@
     </div>
   <% end %>
 </div>
+<% if session[:user_id] && (@question.user.id != session[:user_id]) %>
+  <div class="">
+    <form class="" action="/questions/<%=@question.id%>/answers" method="post">
+      <textarea name="description" rows="8" cols="60" placeholder="Your Answer"></textarea>
+      <input type="submit" name="submit" value="Submit">
+    </form>
+  </div>
+<% elsif session[:user_id].nil? %>
+  <h3>You must be logged in to answer this question.</h3>
+<% elsif @question.user.id == session[:user_id]%>
+  <h3>You cannot answer your own questions.</h3>
+<% end %>
