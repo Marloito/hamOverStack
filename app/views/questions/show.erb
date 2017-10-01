@@ -34,7 +34,7 @@
 </div>
 <% if session[:user_id] && (@question.user.id != session[:user_id]) %>
   <div class="">
-    <form class="" action="/questions/<%=@question.id%>/answers" method="post">
+    <form class="" id="answer-form" action="/questions/<%=@question.id%>/answers" method="post">
       <textarea name="description" rows="8" cols="60" placeholder="Your Answer"></textarea>
       <input type="submit" name="submit" value="Submit">
     </form>
