@@ -3,22 +3,16 @@ post '/answers/:id' do
   question = Question.find(answer.question_id)
   #Not currently working Ajax
   if request.xhr?
-    if answer.best_answer
+    if answer.best_answer # true -- we do have a best answer
       answer.best_answer = false
       answer.save
-      p "*" * 100
-      erb :'/questions/_show', :locals => {question: question, answer: answer}, :layout => false
     else
-      question.answers.each do |ans|
-        ans.best_answer = false
-        ans.save
-      end
       answer.best_answer = true
       answer.save
       p "~" * 100
       erb :'/questions/_show', :locals => {question: question, answer: answer}, :layout => false
     end
-  #if its ajax then dynamically load the best_answer
+    #if its ajax then dynamically load the best_answer
   else
     if answer.best_answer
       answer.best_answer = false
