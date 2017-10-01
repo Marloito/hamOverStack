@@ -2,12 +2,14 @@ get '/questions' do
   @questions = Question.all
   erb :'/questions/index'
 end
+
 get '/questions/new' do
   erb :'/questions/new'
 end
 
 get '/questions/:id' do
   @question = Question.find(params[:id])
+  @best_answer = @question.answers.find_by(best_answer: true)
   erb :'/questions/show'
 end
 
