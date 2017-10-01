@@ -18,12 +18,22 @@ end
 
 post '/questions/:question_id/answers' do
   @answer = Answer.create(description: params[:description], user_id: session[:user_id], question_id: params[:question_id])
+  @question = Question.find(params[:question_id])
+  @best_answer = @question.answers.find_by(best_answer: true)
 
-  @error_messages = @answer.errors.full_messages
-  if @error_messages.length > 0
-    @question = Question.find(params[:question_id])
-    erb  :"/questions/show"
+  if request.xhr?
+    if @answer.id
+      erb :'/answers/_show', layout: false
+    else
+      status 422
+    end
   else
-    redirect "/questions/#{params[:question_id]}"
+    @error_messages = @answer.errors.full_messages
+
+    if @error_messages.length > 0
+      erb  :"/questions/show"
+    else
+      redirect "/questions/#{params[:question_id]}"
+    end
   end
 end
