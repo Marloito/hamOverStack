@@ -6,10 +6,10 @@ post '/answers/:id' do
     if answer.best_answer # true -- we do have a best answer
       answer.best_answer = false
       answer.save
+      erb :'/questions/_answers', locals: {question: question, best_answer: answer}, :layout => false
     else
       answer.best_answer = true
       answer.save
-      p "~" * 100
       erb :'/questions/_show', :locals => {question: question, answer: answer}, :layout => false
     end
     #if its ajax then dynamically load the best_answer

@@ -3,7 +3,7 @@
   <p><%= answer.description %></p>
   <h6><%= answer.user.username %></h6>
   <% if question.user_id == session[:user_id] %>
-    <form class="" action="/answers/<%= answer.id %>" method="post">
+    <form class="best-answer-selector deselect" action="/answers/<%= answer.id %>" method="post">
       <input type="submit" name="submit" value="Deselect as Best Answer">
     </form>
   <% end %>
