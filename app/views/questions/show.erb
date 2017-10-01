@@ -33,7 +33,14 @@
   <% end %>
 </div>
 
-<% if session[:user_id] && (@question.user.id != session[:user_id]) %>
+<% already_answered = false %>
+<% @question.answers.each do |answer| %>
+  <% already_answered = true if answer.user_id == session[:user_id] %>
+<% end %>
+
+<% if already_answered %>
+<h3>You have already answered this question.</h3>
+<% elsif session[:user_id] && (@question.user.id != session[:user_id]) %>
   <div class="">
     <form class="" id="answer-form" action="/questions/<%=@question.id%>/answers" method="post">
       <textarea name="description" rows="8" cols="60" placeholder="Your Answer"></textarea>
