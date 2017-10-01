@@ -12,7 +12,8 @@ $(document).ready(() => {
 
     request.done((response) => {
       $('#all-answers').append(response);
-      $(e.target).find('textarea').val("");
+      $('#all-answers').append('<h3>You have already answered this question.</h3>');
+      $(e.target).remove();
     });
 
     request.fail((obj, status, error) => {
