@@ -9,6 +9,11 @@
   <h4>Best Answer:</h4>
   <p><%= @best_answer.description %></p>
   <h6><%= @best_answer.user.username %></h6>
+  <% if @question.user_id == session[:user_id] %>
+    <form class="" action="/answers/<%= @best_answer.id %>" method="post">
+      <input type="submit" name="submit" value="Deselect as Best Answer">
+    </form>
+  <% end %>
 </div>
 <% end %>
 
@@ -18,7 +23,11 @@
       <p><%= answer.description %></p>
       <h6><%= answer.user.username %></h6>
       <% if @question.user_id == session[:user_id] %>
-        <h6><a href="/answers/<%= answer.id %>">Toggle Best Answer</a></h6>
+        <% if !@best_answer %>
+        <form class="" action="/answers/<%= answer.id %>" method="post">
+          <input type="submit" name="submit" value="Select as Best Answer">
+        </form>
+        <% end %>
       <% end %>
     </div>
   <% end %>
