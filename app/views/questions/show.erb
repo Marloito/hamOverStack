@@ -4,18 +4,12 @@
   <a><h6><%= @question.user.username %></h6></a>
 </div>
 
-<% if @best_answer %>
+
 <div class="best-answer">
-  <h4>Best Answer:</h4>
-  <p><%= @best_answer.description %></p>
-  <h6><%= @best_answer.user.username %></h6>
-  <% if @question.user_id == session[:user_id] %>
-    <form class="" action="/answers/<%= @best_answer.id %>" method="post">
-      <input type="submit" name="submit" value="Deselect as Best Answer">
-    </form>
+  <% if @best_answer %>
+  <%= erb :'/questions/_show', :locals => {question: @question, answer: @best_answer}, :layout => false %>
   <% end %>
 </div>
-<% end %>
 
 <div>
   <% @question.answers.each do |answer| %>
@@ -24,7 +18,7 @@
       <h6><%= answer.user.username %></h6>
       <% if @question.user_id == session[:user_id] %>
         <% if !@best_answer %>
-        <form class="" action="/answers/<%= answer.id %>" method="post">
+        <form class='select-best-answer' action="/answers/<%= answer.id %>" method="post">
           <input type="submit" name="submit" value="Select as Best Answer">
         </form>
         <% end %>
