@@ -12,7 +12,7 @@ $(document).ready(() => {
 
     request.done((response) => {
       console.log(response)
-      $('#all-answers').html(response);
+      $('#all-answers').append(response);
       $(e.target).find('textarea').val("");
     });
   });
