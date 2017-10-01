@@ -17,7 +17,7 @@
 </div>
 <% end %>
 
-<div>
+<div id='all-answers'>
   <% @question.answers.each do |answer| %>
     <div class="answers-show">
       <p><%= answer.description %></p>
@@ -32,6 +32,7 @@
     </div>
   <% end %>
 </div>
+
 <% if session[:user_id] && (@question.user.id != session[:user_id]) %>
   <div class="">
     <form class="" id="answer-form" action="/questions/<%=@question.id%>/answers" method="post">
