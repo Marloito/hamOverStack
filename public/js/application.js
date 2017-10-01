@@ -11,8 +11,12 @@ $(document).ready(() => {
     });
 
     request.done((response) => {
-      console.log(response)
       $('#all-answers').append(response);
+      $(e.target).find('textarea').val("");
+    });
+
+    request.fail((obj, status, error) => {
+      $('#all-answers').append('<p style="color:red;font-size:10pt">Can not answer own question -- Can not answer same question more than once</p>');
       $(e.target).find('textarea').val("");
     });
   });
