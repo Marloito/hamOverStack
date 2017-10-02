@@ -61,7 +61,7 @@ header p a {
 button.user-login-logout {
 	font-size: 1em;
 	text-align: left;
-	color: blue;
+	color: white;
 	background: none;
 	margin: 0;
 	padding: 0;
@@ -89,18 +89,24 @@ h1.logo span{
 
 .banner-location {
   background-image: url("https://cdn2.hubspot.net/hubfs/2171535/donejs-banner.jpg");
-  border-radius: 8px;
-  width: 100%;
-  height: 100%;
+  margin-left:-50%;
+  margin-right:-50%;
+  padding: 10px;
+  overflow: hidden;
 }
 
 nav {
-  float: right;
-  padding-bottom: 30px;
+  text-align: center;
+  margin-left: 550px;
+  margin-top: 10px;
+  color: #c41c00;
 }
 
-welcome-message {
-  float: left;
+.welcome-message {
+  text-align: center;
+  margin-right: 550px;
+  margin-top: -30px;
+  color: white;
 }
 
 .new-question-button {
@@ -115,8 +121,8 @@ welcome-message {
   text-decoration: none;
 }
 
-..new-question-button:link, .new-question-button:visited {
-	color: blue;
+.new-question-button:link a, .new-question-button:visited a {
+	color: #c41c00;
 }
 
 .new-question-button:hover a, .new-question-button:focus a, .new-question-button:active a {
