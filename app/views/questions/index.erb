@@ -2,6 +2,13 @@
 
 <% @questions.each do |question| %>
   <div class="questions-home">
+    <% unless session[:user_id].nil? %>
+      <a href="/questions/<%= question.id %>/index/upvote">▲</a>
+    <% end %>
+    <span><%= question.points %></span>
+    <% unless session[:user_id].nil? %>
+      <a href="/questions/<%= question.id %>/index/downvote">▼</a>
+    <% end %>
     <a href="/questions/<%= question.id %>"><h4><%= question.title %></h4></a>
     <a><h6><%= question.user.username %></h6></a>
     <hr>
