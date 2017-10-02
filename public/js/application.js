@@ -18,10 +18,10 @@ $(document).ready(() => {
         $('.deselect').show();
         $('.select').hide();
 
-      }
-    })
-  })
-    
+      };
+    });
+  });
+
   $('#answer-form').submit((e) => {
     e.preventDefault();
     const url = $(e.target).attr('action')
@@ -45,3 +45,8 @@ $(document).ready(() => {
     });
   });
 });
+
+  $(document).on('submit', '.comment-form', (e) => {
+  e.preventDefault();
+  debugger
+})
