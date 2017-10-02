@@ -4,6 +4,7 @@ class Question < ApplicationRecord
   belongs_to :user
   has_many :answers
   has_many :votes
+  has_many :comments, as: :commentable
 
   def points
     votes.sum(:value)
