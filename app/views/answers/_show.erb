@@ -1,4 +1,11 @@
 <div class="answers-show">
+  <% unless session[:user_id].nil? %>
+    <a href="/answers/<%= @answer.id %>/upvote">▲</a>
+  <% end %>
+  <span><%= @answer.points %></span>
+  <% unless session[:user_id].nil? %>
+    <a href="/answers/<%= @answer.id %>/downvote">▼</a>
+  <% end %>
   <p><%= @answer.description %></p>
   <h6><%= @answer.user.username %></h6>
   <% if @question.user_id == session[:user_id] %>
@@ -9,3 +16,9 @@
     <% end %>
   <% end %>
 </div>
+<form class="comment-form" action="/questions/<%= @answer.question.id %>" method="post">
+  <input type="hidden" name="commentable_type" value="Answer">
+  <input type="hidden" name="answer_id" value="<%=@answer.id%>">
+  <textarea name="comment_body" rows="3" cols="50" placeholder="Enter your comment here"></textarea>
+  <input type="submit" name="" value="Submit">
+</form>
