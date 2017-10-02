@@ -46,7 +46,7 @@ application.css is where you put your styles
 
         <% unless session[:user_id].nil? %>
           <h2 id="welcome"><%= "Welcome #{User.find(session[:user_id]).username}!" %></h2>
-          <h2 id="ask"><a href="/questions/new">Ask a question a question...</a></h2>
+          <h2 id="ask"><a href="/questions/new">Ask a question...</a></h2>
         <% end %>
       </div>
     </div>
