@@ -19,6 +19,13 @@
 
 <%= erb(:'/comments/_comment', :locals => {comments: @question.comments, question: @question, commentable_type: "Question"}) %>
 
+<% if @question.answers.count == 0 %>
+  <h2>0 Answers:</h2>
+<% elsif @question.answers.count == 1 %>
+  <h2><%= @question.answers.count %> Answer:</h2>
+<% elsif @question.answers.count >= 2 %>
+  <h2><%= @question.answers.count %> Answers:</h2>
+<% end %>
 
 <div class="all-answers">
   <div class="best-answer">

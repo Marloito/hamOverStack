@@ -5,9 +5,30 @@ body {
   font-family: 'Open Sans', sans-serif;
   color: #29434e;
 }
+.all-answers{
+  margin: 20px;
+  padding: 10px;
+}
+.comment-container{
+  border-bottom: 3px double #29434e;
+  margin: 20px;
+  padding: 10px;
+}
+.comment-div{
+  border: 1px solid #29434e;
+  margin: 3px;
+  padding: 3px;
+}
+.comment-form{
+margin-left: 40px;
+}
 .container{
   max-width: 700px;
   margin: 0 auto;
+}
+p#comment-author{
+  color: #ff5722;
+  margin-left: 15px;
 }
 .form{
   margin: 150px auto;
