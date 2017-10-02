@@ -47,6 +47,10 @@ h6#comment-author{
 .answer-logic-form{
   text-align: center;
 }
+.questions-home h5{
+  color: #ff764d;
+  margin-left: 15px;
+}
 .form{
   margin: 150px auto;
   padding: 25px;
