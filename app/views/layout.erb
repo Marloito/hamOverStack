@@ -22,28 +22,31 @@
   <a href="/" class="logo-link"> <h1 class='logo'><span>Ham</span>OverStack</h1></a>
 
 <div class="banner-location">
-  <nav>
-    <% if session[:user_id].nil? %>
-      <a class="user-login-logout" href="/sessions/new">Login</a>
-      <a class="user-login-logout" href="/users/new">Sign up</a>
-    <% else %>
-      <form id="logout-button" action="/sessions/<%= session[:user_id] %>" method="post">
-        <input type="hidden" name="_method" value="delete">
-        <button type="submit" class="user-login-logout" value="logout"><span>Logout</span></button>
-      </form>
+  <div class="navigation-area">
+
+    <nav>
+      <% if session[:user_id].nil? %>
+        <a class="user-login-logout" href="/sessions/new">Login</a>
+        <a class="user-login-logout" href="/users/new">Sign up</a>
+      <% else %>
+        <form id="logout-button" action="/sessions/<%= session[:user_id] %>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <h3><button type="submit" class="user-login-logout" value="logout"><span>Logout</span></button></h3>
+        </form>
+      <% end %>
+    </nav>
+
+
+    <% unless session[:user_id].nil? %>
+      <div class="welcome-message">
+        <h3><%= "Welcome #{User.find(session[:user_id]).username}!" %></h3>
+      </div>
+      <div class="new-question-button">
+        <h2><a href="/questions/new">Ask a question</a></h2>
+      </div>
     <% end %>
-  </nav>
 
-
-  <% unless session[:user_id].nil? %>
-    <div class="welcome_message">
-      <h4><%= "Welcome #{User.find(session[:user_id]).username}!" %></h4>
     </div>
-    <div class="new-question-button">
-      <h3><a href="/questions/new">Ask a question</a></h3>
-    </div>
-  <% end %>
-
   </div>
 
   <div class="error_messages">
