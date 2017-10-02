@@ -26,9 +26,26 @@ margin-left: 40px;
   max-width: 700px;
   margin: 0 auto;
 }
-h6#comment-author{
-  color: #ff5722;
+.answers-show h6{
+  color: #ff764d;
   margin-left: 15px;
+}
+.question h6{
+  color: #ff764d;
+  margin-left: 15px;
+}
+h6#comment-author{
+  color: #ff764d;
+  margin-left: 15px;
+}
+.answer-logic h3{
+  text-align: center;
+  padding: 30px;
+  color: red;
+  border: 1px solid red;
+}
+.answer-logic-form{
+  text-align: center;
 }
 .form{
   margin: 150px auto;

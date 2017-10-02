@@ -39,23 +39,27 @@
   </div>
 </div>
 
+<div class="answer-logic">
+  <% already_answered = false %>
+  <% @question.answers.each do |answer| %>
+    <% already_answered = true if answer.user_id == session[:user_id] %>
+  <% end %>
 
-<% already_answered = false %>
-<% @question.answers.each do |answer| %>
-  <% already_answered = true if answer.user_id == session[:user_id] %>
-<% end %>
+  <% if already_answered %>
+  <h3>You have already answered this question.</h3>
+  <% elsif session[:user_id] && (@question.user.id != session[:user_id]) %>
+    <div class="answer-logic-form">
+      <form class="" id="answer-form" action="/questions/<%=@question.id%>/answers" method="post">
+        <textarea name="description" rows="8" cols="60" placeholder="Your Answer"></textarea>
+        <input type="submit" name="submit" value="Submit">
+      </form>
+    </div>
+  <% elsif session[:user_id].nil? %>
+    <h3>You must be logged in to answer this question.</h3>
+  <% elsif @question.user.id == session[:user_id]%>
+    <h3>You cannot answer your own questions.</h3>
+  <% end %>
+</div>
 
-<% if already_answered %>
-<h3>You have already answered this question.</h3>
-<% elsif session[:user_id] && (@question.user.id != session[:user_id]) %>
-  <div class="">
-    <form class="" id="answer-form" action="/questions/<%=@question.id%>/answers" method="post">
-      <textarea name="description" rows="8" cols="60" placeholder="Your Answer"></textarea>
-      <input type="submit" name="submit" value="Submit">
-    </form>
-  </div>
-<% elsif session[:user_id].nil? %>
-  <h3>You must be logged in to answer this question.</h3>
-<% elsif @question.user.id == session[:user_id]%>
-  <h3>You cannot answer your own questions.</h3>
-<% end %>
+<p></p>
+<p></p>
