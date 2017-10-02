@@ -21,6 +21,7 @@
 <body>
   <a href="/" class="logo-link"> <h1 class='logo'><span>Ham</span>OverStack</h1></a>
 
+<div class="banner-location">
   <nav>
     <% if session[:user_id].nil? %>
       <a class="user-login-logout" href="/sessions/new">Login</a>
@@ -39,9 +40,11 @@
       <h4><%= "Welcome #{User.find(session[:user_id]).username}!" %></h4>
     </div>
     <div class="new-question-button">
-      <a href="/questions/new">Ask a question</a>
+      <h3><a href="/questions/new">Ask a question</a></h3>
     </div>
   <% end %>
+
+  </div>
 
   <div class="error_messages">
     <% unless @error_messages.nil? %>
