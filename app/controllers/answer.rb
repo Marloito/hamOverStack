@@ -51,3 +51,9 @@ post '/questions/:question_id/answers' do
     end
   end
 end
+
+get '/answers/:id/vote' do
+  answer = Answer.find(params[:id])
+  answer.votes.create(value: 1)
+  redirect "/questions/#{answer.question.id}"
+end

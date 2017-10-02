@@ -1,5 +1,8 @@
 <% question.answers.each do |answer| %>
   <div class="answers-show">
+    <a href="/answers/<%= answer.id %>/vote">▲</a>
+    <span><%= answer.points %></span>
+    <!-- ▼ -->
     <p><%= answer.description %></p>
     <h6><%= answer.user.username %></h6>
     <% if question.user_id == session[:user_id] %>
