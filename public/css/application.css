@@ -1,201 +1,114 @@
 body {
   counter-reset:section;
   background-color: #f2f2f2;
+  margin: 0 auto;
+  font-family: 'Open Sans', sans-serif;
+  color: #29434e;
+}
+.container{
   max-width: 700px;
   margin: 0 auto;
 }
-
-.user-login-logout:link, .user-login-logout:visited {
-	color: blue;
-
+.form{
+  margin: 150px auto;
+  padding: 25px;
+  box-sizing: border-box;
+  width: 330px;
+  display: grid;
+  grid-gap: 8px;
 }
-
-.user-login-logout:hover, .user-login-logout:focus, .user-login-logout:active {
-	color: gray;
+.form input{
+  height: 1.5em;
+  border-radius: 5px;
 }
-
-button.user-login-logout {
-	font-size: 1em;
-	text-align: left;
-	color: blue;
-	background: none;
-	margin: 0;
-	padding: 0;
-	border: none;
-	cursor: pointer;
+.form input[type=submit]{
+  color: #ffffff;
+  height: 2em;
+  font-size: 1.2em;
+  background: #ff5722;
 }
-
-button.user-login-logout span {
-	text-decoration: underline;
-}
-
-button.-link:hover span,
-button.-link:focus span {
-	color: black;
-}
-
-
-
-h1.logo {
-  color: silver;
-}
-
-a.logo-link {
+a{
   text-decoration: none;
 }
-
-h1.logo span{
-  color: orange;
-}
-
-header p a {
-  color: black;
-  text-decoration: none;
+.header a{
+  color: #ffffff;
 
 }
-
-.user-login-logout:hover, .user-login-logout:focus, .user-login-logout:active {
-	color: gray;
+a span{
+  color: #ff5722;
+}
+.header{
+  margin: 0 auto;
+  background: #29434e;
+  line-height: 60px;
+  border-bottom: #ff5722 solid 10px;
+}
+h1, h2#welcome, h2#ask, h3, h5{
+  padding: 0;
+  margin: 0;
+}
+.homepage{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+nav{
+  text-align: right;
 }
 
-button.user-login-logout {
-	font-size: 1em;
-	text-align: left;
-	color: white;
-	background: none;
-	margin: 0;
-	padding: 0;
-	border: none;
-	cursor: pointer;
+.banner-location{
+  min-height: 300px;
+  background: url('../img/donejs-banner.jpg') no-repeat;
+  color: #ffffff;
 }
 
-.user-login-logout {
-	text-decoration: none;
+.user-login-logout{
+  background: none;
+  border: none;
+  font-size: 1em;
+  color: #ffffff;
+  padding: 0;
+  margin: 0;
 }
 
-h1.logo {
-  color: #29434e;
+h2#welcome{
+  padding-top: 150px;
+  font-size: 2.5em;
+}
+
+h2#ask{
+  padding-top: 50px;
   text-align: center;
-  border-bottom: 3px double gray;
+
+}
+h2#ask a{
+  color: #ff5722;
+  font-style: italic;
+  text-decoration: underline;
 }
 
-.logo-link {
-  text-decoration: none;
-}
-
-h1.logo span{
-  color: #c41c00;
-}
-
-.banner-location {
-  background-image: url("https://cdn2.hubspot.net/hubfs/2171535/donejs-banner.jpg");
-  margin-left:-50%;
-  margin-right:-50%;
-  padding: 10px;
-  overflow: hidden;
-}
-
-nav {
-  text-align: center;
-  margin-left: 550px;
-  margin-top: 10px;
-  color: #c41c00;
-}
-
-.welcome-message {
-  text-align: center;
-  margin-right: 550px;
-  margin-top: -30px;
-  color: white;
-}
-
-.new-question-button {
-  text-align: center;
-	background: #d9d9d9;
-  max-width: 300px;
-  margin: auto;
-	border: 3px solid #bfbfbf;
-}
-
-.new-question-button a {
-  text-decoration: none;
-}
-
-.new-question-button:link a, .new-question-button:visited a {
-	color: #c41c00;
-}
-
-.new-question-button:hover a, .new-question-button:focus a, .new-question-button:active a {
-	color: gray;
-}
-
-.header-home {
-  margin-top: 30px;
-  border-top: 3px double gray;
-}
-
-.error_messages {
+.error_messages{
   color: red;
 }
 
-.questions-home h4, .questions-home h6 {
-  margin: 5px;
-  color: gray;
+.buffer{
+  height: 50px;
 }
 
-.questions-home h6 {
-  padding-left: 25px;
-  color: orange;
+a{
+  color: #546e7a;
+}
+h5, .questions-show h2{
+  color: #ff5722;
 }
 
-.questions-home a {
-  text-decoration: none;
+.questions-show{
+  display: grid;
+  grid-template-columns: 30px auto;
 }
 
-.questions-show {
-  margin-top: 35px;
-  padding: 10px;
-  border: 3px solid #a6a6a6;
-  background-color: #f2f2f2;
-  padding-bottom: 10px;
-  border-bottom: 3px double gray;
-}
-
-.questions-show h6 {
-  max-width: 60px;
-  max-height: 10px;
-  padding: 15px;
-  border: 3px solid #a6a6a6;
-  background-color: #f2f2f2;
-  margin-left: 550px;
-  color: orange;
-}
-
-.questions-show p {
-  padding-top: 10px;
-  border-top: 3px double gray;
-}
-
-.answers-show {
-  margin-top: 35px;
-  padding: 10px;
-  border: 3px solid #a6a6a6;
-  background-color: #f2f2f2;
-  padding-bottom: 10px;
-  border-bottom: 3px double gray;
-}
-
-.answers-show h6{
-  color: orange;
-  margin-left: 30px;
-}
-
-.comment-div {
-  background-color: #f2f2f2;
-  border: 2px solid #a6a6a6;
-}
-
-.comment-div p {
-  font-size: .8em;
-
+.voting-box{
+  padding-top: 20px;
+  height: 18px;
+  display: grid;
+  text-align: center;
 }
