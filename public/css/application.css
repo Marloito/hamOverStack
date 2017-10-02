@@ -1,7 +1,6 @@
 body {
   counter-reset:section;
-  background-color: #F6F6EF;
-  font-family: Verdana;
+  background-color: #f2f2f2;
   max-width: 700px;
   margin: 0 auto;
 }
@@ -30,55 +29,51 @@ button.user-login-logout {
 }
 
 h1.logo {
-  color: silver;
+  color: #29434e;
+  text-align: center;
+  border-bottom: 3px double gray;
 }
 
-a.logo-link {
+.logo-link {
   text-decoration: none;
 }
 
 h1.logo span{
-  color: orange;
+  color: #c41c00;
 }
 
-header p a {
-  color: black;
+nav {
+  float: right;
+  padding-bottom: 30px;
+}
+
+welcome-message {
+  float: left;
+}
+
+.new-question-button {
+  text-align: center;
+	background: #d9d9d9;
+  max-width: 300px;
+  margin: auto;
+	border: 3px solid #bfbfbf;
+}
+
+.new-question-button a {
   text-decoration: none;
 }
 
-header p a:nth-child(n + 2):before {
-  content: " | ";
+..new-question-button:link, .new-question-button:visited {
+	color: blue;
 }
 
-article a.vote-button {
-  color: #8C8C8C;
-  text-decoration: none;
-  display: inline;
-  vertical-align: sub;
+.new-question-button:hover a, .new-question-button:focus a, .new-question-button:active a {
+	color: gray;
 }
 
-article h2 a {
-  text-decoration: none;
-  color: black;
-}
-
-article p a.delete {
-  text-decoration: none;
-  color: #8C8C8C;
-  text-decoration: none;
-}
-
-.inline {
-  display: inline;
-}
-
-.upvote-button {
-  background-color: transparent;
-  border: none;
-  padding-top: 5px;
-  color: #8C8C8C;
-  vertical-align: sub;
-  padding: 1px 0px 0px 0px;
+.header-home {
+  margin-top: 30px;
+  border-top: 3px double gray;
 }
 
 .error_messages {
