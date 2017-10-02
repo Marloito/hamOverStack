@@ -17,4 +17,5 @@
       <% end %>
     <% end %>
   </div>
+      <%= erb :'/comments/_comment', :locals => {comments: answer.comments} %>
 <% end %>
