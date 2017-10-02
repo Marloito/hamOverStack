@@ -3,7 +3,7 @@
   <% comments.each do |comment| %>
   <div class="comment-div">
     <p id="comment-body"> <%= comment.comment_body %> </p>
-    <p id ='comment-author'> Author: <%= User.find(comment.user_id).full_name %> </p>
+    <h6 id ='comment-author'><%= User.find(comment.user_id).full_name %> </h6>
   </div>
   <% end %>
   <% end %>

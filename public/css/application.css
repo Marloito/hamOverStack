@@ -26,7 +26,7 @@ margin-left: 40px;
   max-width: 700px;
   margin: 0 auto;
 }
-p#comment-author{
+h6#comment-author{
   color: #ff5722;
   margin-left: 15px;
 }
