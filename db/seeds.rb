@@ -3,7 +3,7 @@ User.create(full_name: "marlo", username: "marlo", email: "marlo@gmail.com", pas
 User.create(full_name: "eliza", username: "eliza", email: "eliza@gmail.com", password: "password")
 User.create(full_name: "hassan", username: "hassan", email: "hassan@gmail.com", password: "password")
 
-200.times do
+20.times do
   User.create(full_name: Faker::LordOfTheRings.character, username: Faker::Internet.unique.user_name, email: Faker::Internet.unique.email, password: Faker::Internet.password(8))
 end
 
@@ -18,10 +18,10 @@ User.all.each do |user|
   end
 end
 
-1000.times do
+50.times do
   Answer.all.sample.votes.create(value: [1, -1, 1, 1].sample)
 end
 
-200.times do
+20.times do
   Question.all.sample.votes.create(value: [1, -1, 1, 1].sample)
 end

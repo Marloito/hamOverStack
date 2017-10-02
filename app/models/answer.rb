@@ -3,6 +3,7 @@ class Answer < ApplicationRecord
   belongs_to :user
   belongs_to :question
   has_many :votes
+  has_many :comments, as: :commentable
   # validate :not_own_question
   validates :question, uniqueness: {scope: :user, message: "- You've already answered this question"}
 

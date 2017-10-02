@@ -13,6 +13,10 @@
 
 </div>
 
+
+<%= erb(:'/comments/_comment', :locals => {comments: @question.comments, question: @question, commentable_type: "Question"}) %>
+
+
 <div class="all-answers">
   <div class="best-answer">
     <% if @best_answer %>
