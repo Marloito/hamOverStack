@@ -17,5 +17,5 @@
       <% end %>
     <% end %>
   </div>
-      <%= erb :'/comments/_comment', :locals => {comments: answer.comments} %>
+      <%= erb :'/comments/_comment', :locals => {comments: answer.comments, question: question, commentable_type: "Answer", answer_id: answer.id} %>
 <% end %>

@@ -2,10 +2,17 @@
 <% comments.each do |comment| %>
 <div class="comment-div">
   <p id="comment-body"> <%= comment.comment_body %> </p>
-  <p id ='comment-author'> <%= User.find(comment.user_id).full_name %> </p>
+  <p id ='comment-author'> Author: <%= User.find(comment.user_id).full_name %> </p>
 </div>
 <% end %>
 <% end %>
 <% unless session[:user_id].nil? %>
-  <%= erb(:'/comments/_new', :local => {comment_type: "Question"}) %>
+<form class="comment-form" action="/questions/<%= @question.id %>" method="post">
+  <input type="hidden" name="commentable_type" value="<%=commentable_type%>">
+  <% if commentable_type == "Answer" %>
+    <input type="hidden" name="answer_id" value="<%=answer_id%>">
+  <% end %>
+  <textarea name="comment_body" rows="3" cols="50" placeholder="Enter your comment here"></textarea>
+  <input type="submit" name="" value="Submit">
+</form>
 <% end %>
