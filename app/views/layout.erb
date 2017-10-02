@@ -7,7 +7,7 @@
     See: http://necolas.github.com/normalize.css/
   -->
   <link rel="stylesheet" href="/css/normalize.css">
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
   <!--
     application.css is where you put your styles
   -->
@@ -23,12 +23,12 @@
 
   <nav>
     <% if session[:user_id].nil? %>
-      <a href="/sessions/new">Login</a>
-      <a href="/users/new">Sign up</a>
+      <a class="user-login-logout" href="/sessions/new">Login</a>
+      <a class="user-login-logout" href="/users/new">Sign up</a>
     <% else %>
       <form id="logout-button" action="/sessions/<%= session[:user_id] %>" method="post">
         <input type="hidden" name="_method" value="delete">
-        <input type="submit" value="logout">
+        <button type="submit" class="user-login-logout" value="logout"><span>Logout</span></button>
       </form>
     <% end %>
   </nav>
