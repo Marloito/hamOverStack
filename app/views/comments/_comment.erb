@@ -1,3 +1,6 @@
-
-  <p id="comment-body"> <%= comments.first.comment_body %> </p>
-  <p id ='comment-author'> <%= User.find(comments.first.user_id).full_name %> </p>
+<% unless comments.length == 0 %>
+<% comments.each do |comment| %>
+  <p id="comment-body"> <%= comment.comment_body %> </p>
+  <p id ='comment-author'> <%= User.find(comment.user_id).full_name %> </p>
+<% end %>
+<% end %>

@@ -86,13 +86,12 @@ h1.logo span{
 }
 
 .questions-show h6 {
-  float: right;
   max-width: 60px;
   max-height: 10px;
   padding: 15px;
   border: 3px solid #a6a6a6;
   background-color: #f2f2f2;
-  margin-left: 30px;
+  margin-left: 550px;
   color: orange;
 }
 
@@ -113,4 +112,9 @@ h1.logo span{
 .answers-show h6{
   color: orange;
   margin-left: 30px;
+}
+
+.comment-div {
+  background-color: #f2f2f2;
+  border: 2px solid #a6a6a6;
 }

@@ -12,6 +12,7 @@
   <a><h6><%= @question.user.username %></h6></a>
 
 </div>
+
 <div class="comment-div">
   <%= erb(:'/comments/_comment', :locals => {comments: @question.comments}) %>
 </div>
