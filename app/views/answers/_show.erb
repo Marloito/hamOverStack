@@ -16,3 +16,9 @@
     <% end %>
   <% end %>
 </div>
+<form class="comment-form" action="/questions/<%= @answer.question.id %>" method="post">
+  <input type="hidden" name="commentable_type" value="Answer">
+  <input type="hidden" name="answer_id" value="<%=@answer.id%>">
+  <textarea name="comment_body" rows="3" cols="50" placeholder="Enter your comment here"></textarea>
+  <input type="submit" name="" value="Submit">
+</form>
