@@ -1,8 +1,12 @@
 <% question.answers.each do |answer| %>
   <div class="answers-show">
-    <a href="/answers/<%= answer.id %>/vote">▲</a>
+    <% unless session[:user_id].nil? %>
+      <a href="/answers/<%= answer.id %>/upvote">▲</a>
+    <% end %>
     <span><%= answer.points %></span>
-    <!-- ▼ -->
+    <% unless session[:user_id].nil? %>
+      <a href="/answers/<%= answer.id %>/downvote">▼</a>
+    <% end %>
     <p><%= answer.description %></p>
     <h6><%= answer.user.username %></h6>
     <% if question.user_id == session[:user_id] %>
