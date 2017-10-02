@@ -17,3 +17,7 @@ User.all.each do |user|
     Answer.create(description: Faker::HarryPotter.quote, user_id: user.id, question_id: question.user_id)
   end
 end
+
+1000.times do
+  Answer.all.sample.votes.create(value: [1, -1].sample)
+end
