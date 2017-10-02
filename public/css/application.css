@@ -6,6 +6,48 @@ body {
   margin: 0 auto;
 }
 
+.user-login-logout:link, .user-login-logout:visited {
+	color: blue;
+}
+
+.user-login-logout:hover, .user-login-logout:focus, .user-login-logout:active {
+	color: gray;
+}
+
+button.user-login-logout {
+	font-size: 1em;
+	text-align: left;
+	color: blue;
+	background: none;
+	margin: 0;
+	padding: 0;
+	border: none;
+	cursor: pointer;
+}
+
+button.user-login-logout span {
+	text-decoration: underline;
+}
+
+button.-link:hover span,
+button.-link:focus span {
+	color: black;
+}
+
+
+
+h1.logo {
+  color: silver;
+}
+
+a.logo-link {
+  text-decoration: none;
+}
+
+h1.logo span{
+  color: orange;
+}
+
 header p a {
   color: black;
   text-decoration: none;
@@ -48,18 +90,6 @@ article p a.delete {
 
 .error_messages {
   color: red;
-}
-
-h1.logo {
-  color: silver;
-}
-
-a.logo-link {
-  text-decoration: none;
-}
-
-h1.logo span{
-  color: orange;
 }
 
 .questions-home h4, .questions-home h6 {
@@ -118,3 +148,4 @@ h1.logo span{
   background-color: #f2f2f2;
   border: 2px solid #a6a6a6;
 }
+
