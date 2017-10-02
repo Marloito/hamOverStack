@@ -2,63 +2,71 @@
 <html lang="en">
 <head>
   <!--
-    normalize.css removes cross-browser differences in defaults, e.g.,
-    differences in how form elements appear between Firefox and IE
-    See: http://necolas.github.com/normalize.css/
-  -->
-  <link rel="stylesheet" href="/css/normalize.css">
-  <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
-  <!--
-    application.css is where you put your styles
-  -->
-  <link rel="stylesheet" href="/css/application.css">
+  normalize.css removes cross-browser differences in defaults, e.g.,
+  differences in how form elements appear between Firefox and IE
+  See: http://necolas.github.com/normalize.css/
+-->
+<link rel="stylesheet" href="/css/normalize.css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<!--
+application.css is where you put your styles
+-->
+<link rel="stylesheet" href="/css/application.css">
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="/js/application.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="/js/application.js"></script>
 
-  <title></title>
+<title></title>
 </head>
 <body>
-  <a href="/" class="logo-link"> <h1 class='logo'><span>Ham</span>OverStack</h1></a>
 
-<div class="banner-location">
-  <div class="navigation-area">
+  <div class="header">
+    <div class="container homepage">
 
-    <nav>
-      <% if session[:user_id].nil? %>
+      <a href="/" class="logo-link"> <h1 class='logo'>Ham<span>OverStack</span></h1></a>
+
+
+      <nav>
+        <% if session[:user_id].nil? %>
         <a class="user-login-logout" href="/sessions/new">Login</a>
         <a class="user-login-logout" href="/users/new">Sign up</a>
-      <% else %>
+        <% else %>
         <form id="logout-button" action="/sessions/<%= session[:user_id] %>" method="post">
           <input type="hidden" name="_method" value="delete">
-          <h3><button type="submit" class="user-login-logout" value="logout"><span>Logout</span></button></h3>
+          <button type="submit" class="user-login-logout" value="logout"><span>Logout</span></button>
         </form>
-      <% end %>
-    </nav>
-
-
-    <% unless session[:user_id].nil? %>
-      <div class="welcome-message">
-        <h3><%= "Welcome #{User.find(session[:user_id]).username}!" %></h3>
-      </div>
-      <div class="new-question-button">
-        <h2><a href="/questions/new">Ask a question</a></h2>
-      </div>
-    <% end %>
-
+        <% end %>
+      </nav>
     </div>
   </div>
 
+  <% unless @questions.nil? %>
+    <div class="banner-location">
+      <div class="container">
+
+        <% unless session[:user_id].nil? %>
+          <h2 id="welcome"><%= "Welcome #{User.find(session[:user_id]).username}!" %></h2>
+          <h2 id="ask"><a href="/questions/new">Ask a question a question...</a></h2>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
   <div class="error_messages">
     <% unless @error_messages.nil? %>
-      <% @error_messages.each do |error|%>
-        <ul>
-          <li><%= error %></li>
-        </ul>
-      <% end %>
+    <% @error_messages.each do |error|%>
+    <ul>
+      <li><%= error %></li>
+    </ul>
+    <% end %>
     <% end %>
   </div>
+  <div class="container">
+<div class="buffer">
 
-  <%= yield %>
+</div>
+    <%= yield %>
+  </div>
+
 </body>
 </html>

@@ -1,11 +1,11 @@
 <div class="header-home">
-  <h1>Questions:</h1>
+  <h2>Questions:</h2>
 </div>
 
 <% @questions.each do |question| %>
   <div class="questions-home">
-    <a href="/questions/<%= question.id %>"><h4><%= question.title %></h4></a>
-    <a><h6><%= question.user.username %></h6></a>
+    <a href="/questions/<%= question.id %>"><h3><%= question.title %></h3></a>
+    <a><h5>by: <%= question.user.username %></h5></a>
     <hr>
   </div>
 <% end %>
