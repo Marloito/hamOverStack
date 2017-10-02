@@ -14,7 +14,7 @@
 </div>
 
 
-<%= erb(:'/comments/_comment', :locals => {comments: @question.comments}) %>
+<%= erb(:'/comments/_comment', :locals => {comments: @question.comments, question: @question}) %>
 
 
 <div class="all-answers">

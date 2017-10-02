@@ -6,3 +6,6 @@
 </div>
 <% end %>
 <% end %>
+<% unless session[:user_id].nil? %>
+  <%= erb(:'/comments/_new', :local => {comment_type: "Question"}) %>
+<% end %>
