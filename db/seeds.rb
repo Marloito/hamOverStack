@@ -19,5 +19,9 @@ User.all.each do |user|
 end
 
 1000.times do
-  Answer.all.sample.votes.create(value: [1, -1].sample)
+  Answer.all.sample.votes.create(value: [1, -1, 1, 1].sample)
+end
+
+200.times do
+  Question.all.sample.votes.create(value: [1, -1, 1, 1].sample)
 end

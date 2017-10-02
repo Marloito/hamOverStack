@@ -23,3 +23,27 @@ post '/questions' do
     erb :'/questions/new'
   end
 end
+
+get '/questions/:id/upvote' do
+  question = Question.find(params[:id])
+  question.votes.create(value: 1)
+  redirect "/questions/#{question.id}"
+end
+
+get '/questions/:id/downvote' do
+  question = Question.find(params[:id])
+  question.votes.create(value: -1)
+  redirect "/questions/#{question.id}"
+end
+
+get '/questions/:id/index/upvote' do
+  question = Question.find(params[:id])
+  question.votes.create(value: 1)
+  redirect "/questions"
+end
+
+get '/questions/:id/index/downvote' do
+  question = Question.find(params[:id])
+  question.votes.create(value: -1)
+  redirect "/questions"
+end
